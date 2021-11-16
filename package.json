@@ -1,0 +1,22 @@
+{
+  "name": "fanbay-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss build src/style/main.css -o src/dist/style.css",
+    "watch:tailwind": "nodemon --watch src/style/main.css -x \"npm run build:css\"",
+    "serve": "npm run watch:tailwind",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "nodemon": "^2.0.14",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "remixicon": "^2.5.0",
+    "tailwindcss": "^2.2.19"
+  }
+}

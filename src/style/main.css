@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-info {
+  @apply p-4 bg-blue-500 text-center items-center text-2xl font-bold;
+}
+
+.ri-hover {
+  @apply transform scale-110 duration-75;
+}

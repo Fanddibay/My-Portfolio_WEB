@@ -85,8 +85,8 @@
 }
 
 .ri-green {
-  color: #d8d8e3;
-  cursor: not-allowe;
+  color: rgb(255, 145, 0);
+  cursor: not-allowed;
 }
 
 .ri-white {

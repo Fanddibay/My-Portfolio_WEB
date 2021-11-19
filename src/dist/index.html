@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fanbay-Portfolio</title>
+    <meta name="description" content="Portfolio Fandi Bayu" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,11 +19,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon" />
+    <meta property="og:title" content="Portfolio Fanbay" />
+    <meta property="og:description" content="Programmer Portfolio" />
+    <meta property="og:url" content="www.Fanbay.com" />
+    <meta
+      property="og:image"
+      content="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.idntimes.com%2Flife%2Fcareer%2Famelia-rosary%2Fmasa-pandemik-ini-prospek-karir-seorang-programmer-software&psig=AOvVaw1PmxRO29BewGph21lTuqs1&ust=1637370956631000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKikzaWgo_QCFQAAAAAdAAAAABAD"
+    />
+    <meta name="theme-color" content="#000" />
   </head>
   <style>
     body {
       font-family: "Poppins", sans-serif;
       background-color: #352f44;
+    }
+
+    * {
+      scroll-behavior: smooth;
     }
 
     .carousel-open:checked + .carousel-item {
@@ -56,1321 +69,1451 @@
     #carousel-4:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet {
       color: rgba(251, 191, 36); /*Set to match the Tailwind colour you want the active one to be */
     }
-  </style>
-  <body>
-    <header>
-      <!-- navigation -->
-      <!-- nav dekstop -->
-      <nav class="flex items-center p-3 flex-wrap container mx-auto mt-4 lg:block hidden">
-        <div
-          class="
-            fixed
-            flex
-            justify-between
-            items-center
-            mx-auto
-            container
-            shadow-md
-            p-4
-            bg-gray-200
-            z-50
-            animate__animated animate__zoomInUp animate__delay-0.5s
-          "
-        >
-          <img src="images/dummy-logo.png" class="h-full" style="height: 30px" alt="" />
-          <ul class="flex" id="myLinks">
-            <li class="px-6 py-2 hover:text-yellow-400" id="#profile">
-              <a href="#">Profile</a>
-            </li>
-            <li class="px-6 py-2 hover:text-yellow-400" id="#about">
-              <a href="#">About</a>
-            </li>
-            <li class="px-6 py-2 hover:text-yellow-400" id="#project">
-              <a href="#">Project</a>
-            </li>
-            <li class="px-6 py-2 hover:text-yellow-400" id="#contact">
-              <a href="#">Contact</a>
-            </li>
-            <li class="px-6 py-2 hover:text-yellow-400">
-              <a
-                href="#"
-                class="px-4 py-2 bg-yellow-400 text-white rounded hover:bg-yellow-600 transition duration-500"
-                id="resume"
-                >Resume</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- end nav dekstop -->
-      <!-- nav mobile -->
-      <nav class="flex items-center w-full bg-gray-700 p-4 flex-wrap lg:hidden fixed z-50 shadow-md">
-        <img src="images/dummy-logo.png" class="inline-flex" width="50%" alt="" />
-        <button
-          class="text-white inline-flex p-3 hover:bg-gray-900 rounded ml-auto nav-toggler"
-          data-target="#navigation"
-        >
-          <i class="ri-xl ri-menu-4-line"></i>
-        </button>
-        <div class="top-navbar w-full hidden" id="navigation">
-          <div class="mt-8 flex flex-col text-center">
-            <a href="#" class="px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900 flex flex-col">
-              <span>Home</span>
-            </a>
-            <a href="#" class="px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900 flex flex-col">
-              <span>About</span>
-            </a>
-            <a href="#" class="px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900 flex flex-col">
-              <span>Project</span>
-            </a>
-            <a href="#" class="px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900 flex flex-col">
-              <span>Contact</span>
-            </a>
-            <a
-              href="#"
-              class="px-4 py-2 mt-4 bg-yellow-400 text-white rounded hover:bg-yellow-600 transition duration-500"
-            >
-              <span>Resume</span>
-            </a>
-          </div>
-        </div>
-      </nav>
-      <!-- end nav mobile -->
+    /* loader */
+    #loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 120px;
+      height: 120px;
+      margin: -76px 0 0 -76px;
+      border-top: 16px solid #342158;
+      border-right: 16px solid #473b66;
+      border-bottom: 16px solid #584096;
+      border-left: 16px solid #572cc4;
+      border-radius: 50%;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
 
-      <!-- end navigation -->
-      <!-- hero -->
-      <section id="hero">
-        <div class="lg:p-0 p-4 z-10">
-          <div class="container mx-auto lg:mt-40 mt-48 mb:0 lg:mb-34 lg:flex">
-            <div class="lg:w-1/2 w-full align-middle lg:pl-4 pl-0">
-              <h1 class="font-bold text-white leading-10 animate__animated animate__bounceInDown animate__delay-0.5s">
-                <span class="font-medium text-xl lg:text-4xl">Hi am</span>
-                <br />
-                <span class="font-bold text-3xl lg:text-6xl">Fandi Bayu</span><br />
-                <span class="font-light text-xl lg:text-2xl text-gray-300"
-                  >JUNIOR FRONTEND DEVELOPER | UI ENTHUSIAST.</span
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s;
+    }
+
+    @-webkit-keyframes animatebottom {
+      from {
+        bottom: -100px;
+        opacity: 0;
+      }
+      to {
+        bottom: 0px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes animatebottom {
+      from {
+        bottom: -100px;
+        opacity: 0;
+      }
+      to {
+        bottom: 0;
+        opacity: 1;
+      }
+    }
+
+    #myDiv {
+      display: none;
+    }
+  </style>
+  <body style="margin: 0" onload="myFunction()">
+    <div id="loader"></div>
+
+    <section class="animate-bottom" id="myDiv" style="display: none">
+      <header>
+        <!-- navigation -->
+        <!-- nav dekstop -->
+        <nav class="flex items-center p-3 flex-wrap container mx-auto mt-4 lg:block hidden">
+          <div
+            class="
+              fixed
+              flex
+              justify-between
+              items-center
+              mx-auto
+              container
+              shadow-md
+              p-4
+              bg-gray-200
+              z-50
+              animate__animated animate__zoomInUp animate__delay-0.5s
+            "
+          >
+            <img src="images/dummy-logo.png" class="h-full" style="height: 30px" alt="Logo Profile Portfolio Nice" />
+            <ul class="flex" id="myLinks">
+              <li class="px-6 py-2 hover:text-yellow-400" id="#Home">
+                <a href="#Home">Home</a>
+              </li>
+              <li class="px-6 py-2 hover:text-yellow-400" id="#about">
+                <a href="#about">About</a>
+              </li>
+              <li class="px-6 py-2 hover:text-yellow-400" id="#project">
+                <a href="#project">Project</a>
+              </li>
+              <li class="px-6 py-2 hover:text-yellow-400" id="#contact">
+                <a href="#contact">Contact</a>
+              </li>
+              <li class="px-6 py-2 hover:text-yellow-400">
+                <a
+                  href="images/pdf/My-Cv.pdf"
+                  target="_blank"
+                  class="px-4 py-2 bg-yellow-400 text-white rounded hover:bg-yellow-600 transition duration-500"
+                  id="resume"
+                  >Resume</a
                 >
-              </h1>
-              <div class="animate__animated animate__slideInUp animate__delay-0.5s">
-                <p class="font-light text-gray-400 leading-relaxed my-12 lg:my-8">
-                  Tools, tutorials, design and innovation experts, all in one place! The most intuitive way to imagine
-                  your next user experience.
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- end nav dekstop -->
+        <!-- nav mobile -->
+        <nav class="flex items-center w-full bg-gray-700 p-4 flex-wrap lg:hidden fixed z-50 shadow-md">
+          <img src="images/dummy-logo.png" class="inline-flex" width="50%" alt="Logo Profile Portfolio The Best" />
+          <button
+            class="text-white inline-flex p-3 hover:bg-gray-900 rounded ml-auto nav-toggler"
+            data-target="#navigation"
+          >
+            <i class="ri-xl ri-menu-4-line"></i>
+          </button>
+          <div class="top-navbar w-full hidden" id="navigation">
+            <div class="mt-8 flex flex-col text-center">
+              <a href="#home" class="px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900 flex flex-col">
+                <span>Home</span>
+              </a>
+              <a href="#about" class="px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900 flex flex-col">
+                <span>About</span>
+              </a>
+              <a
+                href="#project"
+                class="px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900 flex flex-col"
+              >
+                <span>Project</span>
+              </a>
+              <a
+                href="#contact"
+                class="px-3 py-2 rounded text-gray-400 hover:text-white hover:bg-gray-900 flex flex-col"
+              >
+                <span>Contact</span>
+              </a>
+              <a
+                href="images/pdf/My-Cv.pdf"
+                target="_blank"
+                class="px-4 py-2 mt-4 bg-yellow-400 text-white rounded hover:bg-yellow-600 transition duration-500"
+              >
+                <span>Resume</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <!-- end nav mobile -->
+
+        <!-- end navigation -->
+        <!-- hero -->
+        <section id="Home" class="lg:mt-40 mt-48">
+          <div class="lg:p-0 p-4 z-10">
+            <div class="container mx-auto mb:0 lg:mb-34 lg:flex">
+              <div class="lg:w-1/2 w-full align-middle lg:pl-4 pl-0">
+                <h1 class="font-bold text-white leading-10 animate__animated animate__bounceInDown animate__delay-0.5s">
+                  <span class="font-medium text-xl lg:text-4xl">Hi am</span>
+                  <br />
+                  <span class="font-bold text-3xl lg:text-6xl">Fandi Bayu</span><br />
+                  <span class="font-light text-xl lg:text-2xl text-gray-300"
+                    >JUNIOR FRONTEND DEVELOPER | UI ENTHUSIAST.</span
+                  >
+                </h1>
+                <div class="animate__animated animate__slideInUp animate__delay-0.5s">
+                  <p class="font-light text-gray-400 leading-relaxed my-12 lg:my-8">
+                    Tools, tutorials, design and innovation experts, all in one place! The most intuitive way to imagine
+                    your next user experience.
+                  </p>
+                  <a
+                    href="mailto:fandi.bayu110@gmail.com"
+                    target="_blank"
+                    class="
+                      border-yellow-400 border-2
+                      hover:bg-yellow-400 hover:text-white
+                      px-9
+                      py-2
+                      text-gray-300
+                      rounded-xl
+                      duration-500
+                      mb-4
+                    "
+                    >Get in touch</a
+                  >
+                  <div class="z-10">
+                    <ul class="flex mt-8">
+                      <li>
+                        <a href="https://github.com/Fanddibay" target="_blank" class="pr-3">
+                          <i class="ri-red ri-xl ri-github-fill transform hover:scale-110" width="36px"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://dribbble.com/fanbayy" target="_blank" class="pr-3">
+                          <i
+                            class="ri-red ri-xl ri-dribbble-line transform motion-safe:hover:scale-110"
+                            width="36px"
+                          ></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.instagram.com/fanddibay/" target="_blank" class="pr-3">
+                          <i class="ri-red ri-xl ri-instagram-line" width="36px"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.linkedin.com/in/fanddi-bayu-776b211b3/" target="_blank" class="pr-3">
+                          <i
+                            class="ri-red ri-xl ri-linkedin-box-fill transform motion-safe:hover:scale-110"
+                            width="36px"
+                          ></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.facebook.com/fanbay.fanbay.1" target="_blank" class="">
+                          <i
+                            class="ri-red ri-xl ri-facebook-circle-fill transform motion-safe:hover:scale-110"
+                            width="36px"
+                          ></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="w-1/2">
+                <img
+                  src="images/undraw_designer_re_5v95.svg"
+                  class="
+                    h-full
+                    lg:pl-24
+                    rounded-xl
+                    -mt-12
+                    lg:block
+                    hidden
+                    z-10
+                    animate__animated animate__slideInRight animate__delay-0.5s
+                  "
+                  style="height: 100%"
+                  width="100%"
+                  alt="Images Designer"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- end hero -->
+      </header>
+
+      <main class="">
+        <!-- about me -->
+        <section id="about" class="lg:my-48 mt-56">
+          <div class="mx-auto container">
+            <div class="lg:flex sm:flex">
+              <div class="lg:w-1/2 sm:w-1/2 w-full animate__animated animate__slideInLeft animate__delay-0.5s">
+                <img
+                  src="images/dummy-profile.png"
+                  width="80%"
+                  class="
+                    rounded-xl
+                    shadow-2xl
+                    transform
+                    hover:translate-x-4 hover:translate-y-4
+                    transition
+                    duration-700
+                    mx-auto
+                  "
+                  alt="Profile Programmer Fandi"
+                />
+              </div>
+              <div
+                class="
+                  lg:w-1/2 lg:pl-12 lg:mt-14
+                  sm:w-1/2
+                  w-full
+                  p-4
+                  text-left
+                  sm:-mt-4
+                  lg:-mt-2
+                  mt-12
+                  animate__animated animate__slideInRight animate__delay-0.5s
+                "
+              >
+                <h1 class="font-bold text-white text-3xl lg:text-3xl sm:text-xl">
+                  About <span class="text-yellow-400">Me</span>
+                </h1>
+                <p class="mt-8 sm:mt-2 lg:mt-12 leading-6 text-white text-justify sm:text-sm lg:text-xl">
+                  Hi, my name is Fandi Bayu a frontend developer and freelancer based in Jakarta, Indonesia. I'm a 5
+                  semester student at <span class="font-bold text-yellow-400">Jenderal Soedirman University</span>.
+                  <br /><br />I help companies to build scaleable web app and beautiful user interfaces to give users
+                  the best digital experiences while using their products. My main focus is building accessible and
+                  scaleable user interfaces for a variety of clients. <br /><br />
+                  These are some of tools and technologies that I used recently
                 </p>
+                <ul class="flex mt-8 sm:mt-4 justify-center lg:justify-start text-gray-800">
+                  <li class="pr-4"><i class="ri-2x ri-html5-fill"></i></li>
+                  <li class="pr-4"><i class="ri-2x ri-css3-fill"></i></li>
+                  <li class="pr-4"><i class="ri-2x ri-unsplash-fill"></i></li>
+                  <li class="pr-4"><i class="ri-2x ri-terminal-box-fill"></i></li>
+                  <li><i class="ri-2x ri-code-line"></i></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- end about me -->
+        <!-- project page -->
+        <section id="project">
+          <div class="mx-auto my-48">
+            <div class="container mx-auto">
+              <h1 class="text-center text-yellow-400 text-3xl font-bold">
+                Some <span class="text-gray-400 underline">Projects</span> I've built
+              </h1>
+              <div class="carousel relative shadow-2xl mt-14 transform hover:-translate-y-8 duration-700">
+                <div class="carousel-inner relative overflow-hidden lg:w-full shadow-2xl container rounded-xl">
+                  <!--Slide 1-->
+                  <input
+                    class="carousel-open"
+                    type="radio"
+                    id="carousel-1"
+                    name="carousel"
+                    aria-hidden="true"
+                    hidden=""
+                    checked="checked"
+                  />
+                  <div class="carousel-item absolute opacity-0 lg:h-3/6 h-screen lg:px-0">
+                    <div
+                      class="
+                        block
+                        lg:flex lg:h-full
+                        sm:h-full
+                        h-screen
+                        bg-gradient-to-l
+                        from-gray-700
+                        text-white text-center
+                        px-8
+                        lg:px-0
+                        pt-36
+                        lg:pt-0
+                      "
+                    >
+                      <div class="w-full lg:h-full pt-8">
+                        <img src="images/web-10.png" class="w-full h-full lg:w-11/12" alt="Image Web Company" />
+                      </div>
+                      <div class="lg:w-1/2 w-full pt-8 text-left">
+                        <h3 class="font-bold text-xl leading-10">Productly Company Website</h3>
+                        <h5>Role: Frontend Developer</h5>
+                        <p class="mt-8 pr-4">
+                          Productly Company Website is a website comapny that i built with bootstrap 5, and jquery
+                          <br />
+                          <br />
+                          <span class="text-yellow-400">Bootstrap, Jquery, HTML</span>
+                        </p>
+                        <ul class="flex align-middle mt-4">
+                          <li class="mt-2">
+                            <a href="https://github.com/Fanddibay/Productly-Company" target="_blank">
+                              <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
+                            ></a>
+                          </li>
+                          <li class="text-2xl">|</li>
+                          <li class="mt-2">
+                            <a href="https://productly-company.netlify.app/" target="_blank">
+                              <i
+                                class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
+                                width="36px"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <label
+                    for="carousel-4"
+                    class="
+                      prev
+                      control-1
+                      w-10
+                      h-10
+                      ml-2
+                      lg:ml-10
+                      absolute
+                      cursor-pointer
+                      hidden
+                      text-3xl
+                      font-bold
+                      text-black
+                      hover:text-white
+                      rounded-full
+                      bg-white
+                      hover:bg-blue-700
+                      leading-tight
+                      text-center
+                      z-10
+                      inset-y-0
+                      left-0
+                      my-auto
+                    "
+                    >‹</label
+                  >
+                  <label
+                    for="carousel-2"
+                    class="
+                      next
+                      control-1
+                      w-10
+                      h-10
+                      mr-2
+                      lg:mr-10
+                      absolute
+                      cursor-pointer
+                      hidden
+                      text-3xl
+                      font-bold
+                      text-black
+                      hover:text-white
+                      rounded-full
+                      bg-white
+                      hover:bg-blue-700
+                      leading-tight
+                      text-center
+                      z-10
+                      inset-y-0
+                      right-0
+                      my-auto
+                    "
+                    >›</label
+                  >
+                  <!--End Slide 1-->
+                  <!--Slide 2-->
+                  <input
+                    class="carousel-open"
+                    type="radio"
+                    id="carousel-2"
+                    name="carousel"
+                    aria-hidden="true"
+                    hidden=""
+                  />
+                  <div class="carousel-item absolute opacity-0 lg:h-3/6 h-screen p-4 lg:p-0">
+                    <div
+                      class="
+                        block
+                        lg:flex lg:h-full
+                        h-screen
+                        bg-gradient-to-l
+                        from-gray-700
+                        text-white text-center
+                        px-8
+                        lg:px-0
+                        pt-36
+                        lg:pt-0
+                      "
+                    >
+                      <div class="w-full lg:h-full pt-8">
+                        <img src="images/web-7.png" class="w-full h-full lg:w-11/12" alt="Image Fantravel UI Travels" />
+                      </div>
+                      <div class="lg:w-1/2 w-full pt-8 text-left z-50">
+                        <h3 class="font-bold text-xl leading-10">FanTravel</h3>
+                        <h5>Role: Frontend Developer</h5>
+                        <p class="mt-8 pr-4">
+                          FanTravel is a Travel Statis Website, and and i have completed to the backend developer stage
+                          with php and laravel framework 6, for more info u can
+                          <a href="#" class="underline hover:text-yellow-400">email me</a>
+                          <br />
+                          <br />
+                          <span class="text-yellow-400">Bootstrap, Jquery, HTML</span>
+                        </p>
+                        <ul class="flex align-middle mt-4 z-50">
+                          <li class="mt-2 cursor-not-allowed">
+                            <a href="#" class="cursor-not-allowed">
+                              <i class="ri-green ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
+                            ></a>
+                          </li>
+                          <li class="text-2xl">|</li>
+                          <li class="mt-2">
+                            <a href="https://fantravel.netlify.app/" target="_blank">
+                              <i
+                                class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
+                                width="36px"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <label
+                    for="carousel-1"
+                    class="
+                      prev
+                      control-2
+                      w-10
+                      h-10
+                      ml-2
+                      lg:ml-10
+                      absolute
+                      cursor-pointer
+                      hidden
+                      text-3xl
+                      font-bold
+                      text-black
+                      hover:text-white
+                      rounded-full
+                      bg-white
+                      hover:bg-blue-700
+                      leading-tight
+                      text-center
+                      z-10
+                      inset-y-0
+                      left-0
+                      my-auto
+                    "
+                    >‹</label
+                  >
+                  <label
+                    for="carousel-3"
+                    class="
+                      next
+                      control-2
+                      w-10
+                      h-10
+                      mr-2
+                      lg:mr-10
+                      absolute
+                      cursor-pointer
+                      hidden
+                      text-3xl
+                      font-bold
+                      text-black
+                      hover:text-white
+                      rounded-full
+                      bg-white
+                      hover:bg-blue-700
+                      leading-tight
+                      text-center
+                      z-50
+                      inset-y-0
+                      right-0
+                      my-auto
+                    "
+                    >›</label
+                  >
+                  <!--end Slide 2-->
+                  <!--Slide 3-->
+                  <input
+                    class="carousel-open"
+                    type="radio"
+                    id="carousel-3"
+                    name="carousel"
+                    aria-hidden="true"
+                    hidden=""
+                  />
+                  <div class="carousel-item absolute opacity-0 lg:h-3/6 h-screen p-4 lg:p-0">
+                    <div
+                      class="
+                        block
+                        lg:flex lg:h-full
+                        h-screen
+                        bg-gradient-to-l
+                        from-gray-700
+                        text-white text-center
+                        px-8
+                        lg:px-0
+                        pt-36
+                        lg:pt-0
+                      "
+                    >
+                      <div class="w-1/2 w-full lg:h-full pt-8">
+                        <img
+                          src="images/web-11.png"
+                          class="w-full h-full lg:w-11/12"
+                          alt="Images Olshop Funiture FanbayyLux"
+                        />
+                      </div>
+                      <div class="lg:w-1/2 w-full pt-8 text-left z-50">
+                        <h3 class="font-bold text-xl leading-10">Luxspace</h3>
+                        <h5>Role: Frontend Developer</h5>
+                        <p class="mt-8 pr-4">
+                          Luxspace is a website online shop funiture that i built with tailwind css, jquery, dan webpack
+                          <br />
+                          <br />
+                          <span class="text-yellow-400">Tailwindcss, Jquery, HTML,Webpack</span>
+                        </p>
+                        <ul class="flex align-middle mt-4">
+                          <li class="mt-2">
+                            <a href="#" class="cursor-not-allowed">
+                              <i class="ri-green ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
+                            ></a>
+                          </li>
+                          <li class="text-2xl">|</li>
+                          <li class="mt-2">
+                            <a href="https://fanbayylux.netlify.app/" target="_blank">
+                              <i class="ri-red ri-xl pl-4 ri-external-link-line" width="36px"></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <label
+                    for="carousel-2"
+                    class="
+                      prev
+                      control-3
+                      w-10
+                      h-10
+                      ml-2
+                      lg:ml-10
+                      absolute
+                      cursor-pointer
+                      hidden
+                      text-3xl
+                      font-bold
+                      text-black
+                      hover:text-white
+                      rounded-full
+                      bg-white
+                      hover:bg-blue-700
+                      leading-tight
+                      text-center
+                      z-10
+                      inset-y-0
+                      left-0
+                      my-auto
+                    "
+                    >‹</label
+                  >
+                  <label
+                    for="carousel-4"
+                    class="
+                      next
+                      control-3
+                      w-10
+                      h-10
+                      mr-2
+                      lg:mr-10
+                      absolute
+                      cursor-pointer
+                      hidden
+                      text-3xl
+                      font-bold
+                      text-black
+                      hover:text-white
+                      rounded-full
+                      bg-white
+                      hover:bg-blue-700
+                      leading-tight
+                      text-center
+                      z-50
+                      inset-y-0
+                      right-0
+                      my-auto
+                    "
+                    >›</label
+                  >
+                  <!--end Slide 3-->
+
+                  <!-- slide 4 -->
+                  <input
+                    class="carousel-open"
+                    type="radio"
+                    id="carousel-4"
+                    name="carousel"
+                    aria-hidden="true"
+                    hidden=""
+                  />
+                  <div class="carousel-item absolute opacity-0 lg:h-3/6 h-screen p-4 lg:p-0">
+                    <div
+                      class="
+                        block
+                        lg:flex lg:h-full
+                        h-screen
+                        bg-gradient-to-l
+                        from-gray-700
+                        text-white text-center
+                        px-8
+                        lg:px-0
+                        pt-36
+                        lg:pt-0
+                      "
+                    >
+                      <div class="w-1/2 w-full lg:h-full pt-8">
+                        <img src="images/web-5.png" class="w-full h-full lg:w-11/12" alt="Images Quizz App UI" />
+                      </div>
+                      <div class="lg:w-1/2 w-full pt-8 text-left z-50">
+                        <h3 class="font-bold text-xl leading-10">Tax-Qu</h3>
+                        <h5>Role: Frontend Developer</h5>
+                        <p class="mt-8 pr-4">
+                          Tax-Qu is a Game Question for a tax education that i built with Vanilla Css 80%, bootstrap,
+                          Vanilla Js, jquery, and webpack
+                          <br />
+                          <br />
+                          <span class="text-yellow-400">Vanilla Css, Jquery, HTML,JavaScript, Webpack</span>
+                        </p>
+                        <ul class="flex align-middle mt-4">
+                          <li class="mt-2">
+                            <a href="https://github.com/Fanddibay/Quizz-APP" target="_blank">
+                              <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
+                            ></a>
+                          </li>
+                          <li class="text-2xl">|</li>
+                          <li class="mt-2">
+                            <a href="https://demo-quizz-app.netlify.app/" target="_blank">
+                              <i
+                                class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
+                                width="36px"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <label
+                    for="carousel-3"
+                    class="
+                      prev
+                      control-4
+                      w-10
+                      h-10
+                      ml-2
+                      lg:ml-10
+                      absolute
+                      cursor-pointer
+                      hidden
+                      text-3xl
+                      font-bold
+                      text-black
+                      hover:text-white
+                      rounded-full
+                      bg-white
+                      hover:bg-blue-700
+                      leading-tight
+                      text-center
+                      z-10
+                      inset-y-0
+                      left-0
+                      my-auto
+                    "
+                    >‹</label
+                  >
+                  <label
+                    for="carousel-1"
+                    class="
+                      next
+                      control-4
+                      w-10
+                      h-10
+                      mr-2
+                      lg:mr-10
+                      absolute
+                      cursor-pointer
+                      hidden
+                      text-3xl
+                      font-bold
+                      text-black
+                      hover:text-white
+                      rounded-full
+                      bg-white
+                      hover:bg-blue-700
+                      leading-tight
+                      text-center
+                      z-50
+                      inset-y-0
+                      right-0
+                      my-auto
+                    "
+                    >›</label
+                  >
+                  <!--end Slide 4-->
+
+                  <!-- Add additional indicators for each slide-->
+                  <ol class="carousel-indicators">
+                    <li class="inline-block mr-3">
+                      <label
+                        for="carousel-1"
+                        class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-yellow-400"
+                        >•</label
+                      >
+                    </li>
+                    <li class="inline-block mr-3">
+                      <label
+                        for="carousel-2"
+                        class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-yellow-400"
+                        >•</label
+                      >
+                    </li>
+                    <li class="inline-block mr-3">
+                      <label
+                        for="carousel-3"
+                        class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-yellow-400"
+                        >•</label
+                      >
+                    </li>
+                    <li class="inline-block mr-3">
+                      <label
+                        for="carousel-4"
+                        class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-yellow-400"
+                        >•</label
+                      >
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <!-- some project -->
+              <div class="mt-44">
+                <h1 class="text-center text-gray-400 text-3xl font-bold lg:mt-24 mt-40 mb-12 lg:px-0 px-4">
+                  Another Project <span class="text-yellow-400 underline">Redesign</span> I've Built
+                </h1>
+                <!-- mobile mode -->
+                <div class="block lg:hidden">
+                  <div class="grid grid-cols-1 gap-4 px-5 mt-14">
+                    <div
+                      class="
+                        mt-2
+                        row-span-4
+                        bg-gradient-to-br
+                        from-gray-700
+                        bg-gray-700
+                        rounded-b-xl
+                        transform
+                        duration-700
+                        hover:-translate-y-4 hover:shadow-2xl
+                      "
+                    >
+                      <div class="">
+                        <img
+                          src="images/web-2.png"
+                          class="opacity-50 hover:opacity-100 duration-700 delay-300"
+                          style="width: 100%"
+                          alt="Redesign Image 1"
+                        />
+                      </div>
+                      <div class="mt-4 p-5">
+                        <h2 class="text-white font-bold leading-10">Redesign Website Russ Rufino</h2>
+                        <p class="mt-6 text-light text-white text-sm">
+                          This is a website Russ Rufino, that I resigned from a client request with a UI that I made
+                          myself using :
+                          <br />
+                          <br />
+                          <span class="text-yellow-400 underline"
+                            >JavaScript, HTML5, Bootstrap5, CSS3, and Jquery.</span
+                          >
+                        </p>
+                        <ul class="flex float-right mt-12 mb-4">
+                          <li class="mt-2">
+                            <a href="https://github.com/Fanddibay/Redesign-Web-2" target="_blank">
+                              <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
+                            ></a>
+                          </li>
+                          <li class="text-2xl">|</li>
+                          <li class="mt-2">
+                            <a href="https://russ-rufino-redesign.netlify.app/" target="_blank">
+                              <i
+                                class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
+                                width="36px"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        mt-2
+                        row-span-4
+                        bg-gradient-to-br
+                        from-gray-700
+                        bg-gray-700
+                        rounded-b-xl
+                        transform
+                        duration-700
+                        hover:-translate-y-4 hover:shadow-2xl
+                      "
+                    >
+                      <div class="">
+                        <img
+                          src="images/web-4.png"
+                          class="opacity-50 hover:opacity-100 duration-700 delay-300"
+                          style="width: 100%"
+                          alt="Redesign Web 2"
+                        />
+                      </div>
+                      <div class="mt-4 p-5">
+                        <h2 class="text-white font-bold leading-10">Redesign Website Pedro Adrao</h2>
+                        <p class="mt-6 text-light text-white text-sm">
+                          This is a website Pedro Adrao, that I resigned from a client request with a UI that I made
+                          myself using :
+                          <br />
+                          <br />
+                          <span class="text-yellow-400 underline"
+                            >JavaScript, HTML5, Bootstrap5, CSS3, and Jquery.</span
+                          >
+                        </p>
+                        <ul class="flex float-right mt-12 mb-4">
+                          <li class="mt-2">
+                            <a href="https://github.com/Fanddibay/Redesign-Web-2" target="_blank">
+                              <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
+                            ></a>
+                          </li>
+                          <li class="text-2xl">|</li>
+                          <li class="mt-2">
+                            <a href="https://taki-moore-redesign.netlify.app/" target="_blank">
+                              <i
+                                class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
+                                width="36px"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        mt-2
+                        row-span-4
+                        bg-gradient-to-br
+                        from-gray-700
+                        bg-gray-700
+                        rounded-b-xl
+                        transform
+                        duration-700
+                        hover:-translate-y-4 hover:shadow-2xl
+                      "
+                    >
+                      <div class="">
+                        <img
+                          src="images/web-4.png"
+                          class="opacity-50 hover:opacity-100 duration-700 delay-300"
+                          style="width: 100%"
+                          alt="Redesign Web 3"
+                        />
+                      </div>
+                      <div class="mt-4 p-5">
+                        <h2 class="text-white font-bold leading-10">Redesign Taki Moore</h2>
+                        <p class="mt-6 text-light text-white text-sm">
+                          This is a website Taki Moore, that I resigned from a client request with a UI that I made
+                          myself using :
+                          <br />
+                          <br />
+                          <span class="text-yellow-400 underline"
+                            >JavaScript, HTML5, Bootstrap5, CSS3, and Jquery.</span
+                          >
+                        </p>
+                        <ul class="flex float-right mt-12 mb-4">
+                          <li class="mt-2">
+                            <a href="https://github.com/Fanddibay/Redesign-Web-1">
+                              <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
+                            ></a>
+                          </li>
+                          <li class="text-2xl">|</li>
+                          <li class="mt-2">
+                            <a href="https://pedro-adao-redesign.netlify.app/" target="_blank">
+                              <i
+                                class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
+                                width="36px"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end mobile mode -->
+                <!-- dekstop mode -->
+                <div class="hidden lg:block">
+                  <div class="grid grid-rows-4 grid-flow-col gap-4">
+                    <div
+                      class="
+                        row-span-4
+                        bg-gradient-to-br
+                        from-gray-700
+                        rounded-b-xl
+                        transform
+                        duration-700
+                        hover:-translate-y-4 hover:shadow-2xl
+                      "
+                    >
+                      <div class="">
+                        <img
+                          src="images/web-2.png"
+                          class="opacity-50 hover:opacity-100 duration-700 delay-300"
+                          style="width: 100%"
+                          alt="Redesign Web 1"
+                        />
+                      </div>
+                      <div class="mt-4 p-5">
+                        <h2 class="text-white font-bold leading-10">Redesign Website Russ Rufino</h2>
+                        <p class="mt-6 text-light text-white text-sm">
+                          This is a website Russ Rufino, that I resigned from a client request with a UI that I made
+                          myself using :
+                          <br />
+                          <br />
+                          <span class="text-yellow-400 underline"
+                            >JavaScript, HTML5, Bootstrap5, CSS3, and Jquery.</span
+                          >
+                        </p>
+                        <ul class="flex float-right mt-12 mb-4">
+                          <li class="mt-2">
+                            <a href="https://github.com/Fanddibay/Redesign-Web-2" target="_blank">
+                              <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
+                            ></a>
+                          </li>
+                          <li class="text-2xl">|</li>
+                          <li class="mt-2">
+                            <a href="https://russ-rufino-redesign.netlify.app/" target="_blank">
+                              <i
+                                class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
+                                width="36px"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        col-span-2
+                        row-span-2
+                        bg-gradient-to-tl
+                        from-gray-700
+                        flex
+                        rounded-b-xl
+                        transform
+                        duration-700
+                        hover:translate-x-4 hover:shadow-2xl
+                      "
+                    >
+                      <div class="w-1/2">
+                        <img
+                          src="images/web-4.png"
+                          class="h-full opacity-50 hover:opacity-100 duration-700 delay-300"
+                          style="width: 100%"
+                          alt="Redesign Web 2"
+                        />
+                      </div>
+                      <div class="mt-4 pl-5">
+                        <h2 class="text-white font-bold leading-10">Redesign Website Pedro Adao</h2>
+                        <p class="mt-6 text-light text-white text-sm pr-2">
+                          This is a website Pedro Adrao, that I resigned <br />
+                          from a client request with a UI that I made myself using :
+                          <br />
+                          <br />
+                          <span class="text-yellow-400 underline"
+                            >JavaScript, HTML5, Bootstrap5, CSS3, and Jquery.</span
+                          >
+                        </p>
+                        <ul class="flex mt-12 mb-4">
+                          <li class="mt-2">
+                            <a href="https://github.com/Fanddibay/Redesign-Web-2" target="_blank">
+                              <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
+                            ></a>
+                          </li>
+                          <li class="text-2xl">|</li>
+                          <li class="mt-2">
+                            <a href="https://taki-moore-redesign.netlify.app/" target="_blank">
+                              <i
+                                class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
+                                width="36px"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        col-span-2
+                        row-span-2
+                        bg-gradient-to-tl
+                        from-gray-700
+                        flex
+                        rounded-b-xl
+                        transform
+                        duration-700
+                        hover:translate-x-4 hover:shadow-2xl
+                      "
+                    >
+                      <div class="w-1/2">
+                        <img
+                          src="images/web-3.png"
+                          class="h-full opacity-50 hover:opacity-100 duration-700 delay-300"
+                          style="width: 100%"
+                          alt="Redesign Web 2"
+                        />
+                      </div>
+                      <div class="mt-4 pl-5">
+                        <h2 class="text-white font-bold leading-10">Redesign Website Taki Moore</h2>
+                        <p class="mt-6 text-light text-white text-sm pr-2">
+                          This is a website Taki Moore, that I resigned <br />
+                          from a client request with a UI that I made myself using :
+                          <br />
+                          <br />
+                          <span class="text-yellow-400 underline"
+                            >JavaScript, HTML5, Bootstrap5, CSS3, and Jquery.</span
+                          >
+                        </p>
+                        <ul class="flex mt-12 mb-4">
+                          <li class="mt-2">
+                            <a href="https://github.com/Fanddibay/Redesign-Web-1">
+                              <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
+                            ></a>
+                          </li>
+                          <li class="text-2xl">|</li>
+                          <li class="mt-2">
+                            <a href="https://pedro-adao-redesign.netlify.app/" target="_blank">
+                              <i
+                                class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
+                                width="36px"
+                              ></i
+                            ></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end dekstop mode -->
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- end project page -->
+        <!-- sertificat -->
+        <section>
+          <div class="-mt-4 mx-auto mb-24">
+            <div class="container lg:pl-14 pl-0 mx-auto">
+              <h1 class="font-bold text-4xl text-center text-white mb-14">Sertificat</h1>
+              <div class="grid grid-cols-1 sm:grid-cols-2 mx-auto lg:grid-cols-3 px-4 lg:px-0 gap-6">
+                <!-- sertifikat 1 -->
+                <div
+                  class="
+                    bg-gradient-to-br
+                    from-gray-900
+                    p-8
+                    shadow-2xl
+                    opacity-70
+                    hover:opacity-100
+                    transform
+                    hover:-translate-y-7
+                    duration-700
+                  "
+                >
+                  <ul class="flex mt-6 text-white mb-2">
+                    <li class="text-sm mr-12 flex">
+                      <i class="ri-white ri-xl ri-government-fill"></i>
+                      <p class="-mt-1 ml-2">Dicoding Academy</p>
+                    </li>
+                    <li class="text-sm flex">
+                      <i class="ri-white ri-xl ri-calendar-fill"></i>
+                      <p class="-mt-1 ml-2">Juli 2020</p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h4 class="text-white font-bold my-4">Belajar Dasar Pemograman Web</h4>
+                  <p class="font-light text-gray-50 text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
+                    commodi quaerat eaque culpa facilis voluptatem!
+                  </p>
+                  <a
+                    target="_blank"
+                    href="https://www.dicoding.com/certificates/W0LZ0WK13Z65"
+                    class="float-right mt-6 text-yellow-400 hover:underline"
+                    >View Sertificat</a
+                  >
+                </div>
+                <!-- sertifikat 2 -->
+                <div
+                  class="
+                    bg-gradient-to-br
+                    from-gray-900
+                    p-8
+                    transform
+                    hover:-translate-y-7
+                    duration-700
+                    shadow-2xl
+                    opacity-70
+                    hover:opacity-100
+                  "
+                >
+                  <ul class="flex mt-6 text-white mb-2">
+                    <li class="text-sm mr-4 flex">
+                      <i class="ri-white ri-xl ri-government-fill"></i>
+                      <p class="-mt-1 ml-2">Dicoding Academy</p>
+                    </li>
+                    <li class="text-sm flex">
+                      <i class="ri-white ri-xl ri-calendar-fill"></i>
+                      <p class="-mt-1 ml-2">September 2020</p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h4 class="text-white font-bold my-4">Belajar Fundamental Front-End Web</h4>
+                  <p class="font-light text-gray-50 text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
+                    commodi quaerat eaque culpa facilis voluptatem!
+                  </p>
+                  <a
+                    href="https://www.dicoding.com/certificates/KERZRQR4WXYV"
+                    target="_blank"
+                    class="float-right mt-6 text-yellow-400 hover:underline"
+                    >View Sertificat</a
+                  >
+                </div>
+                <!-- sertifikat 3 -->
+                <div
+                  class="
+                    bg-gradient-to-br
+                    from-gray-900
+                    p-8
+                    transform
+                    hover:-translate-y-7
+                    duration-700
+                    shadow-2xl
+                    opacity-70
+                    hover:opacity-100
+                  "
+                >
+                  <ul class="flex mt-6 text-white mb-2">
+                    <li class="text-sm mr-8 flex">
+                      <i class="ri-white ri-xl ri-government-fill"></i>
+                      <p class="-mt-1 ml-2">Dicoding Academy</p>
+                    </li>
+                    <li class="text-sm flex">
+                      <i class="ri-white ri-xl ri-calendar-fill"></i>
+                      <p class="-mt-1 ml-2">October 2021</p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h4 class="text-white font-bold my-4">Membuat Produk Digital Terbaik ala Startup Unicorn</h4>
+                  <p class="font-light text-gray-50 text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
+                    commodi quaerat eaque culpa facilis voluptatem!
+                  </p>
+                  <a
+                    href="images/pdf/Membuat Produk Digital Terbaik ala Startup Unicorn Certificate.pdf"
+                    target="_blank"
+                    class="float-right mt-6 text-yellow-400 hover:underline"
+                    >View Sertificat</a
+                  >
+                </div>
+                <!-- sertifikat 4 -->
+                <div
+                  class="
+                    bg-gradient-to-br
+                    from-gray-900
+                    p-8
+                    transform
+                    hover:-translate-y-7
+                    duration-700
+                    shadow-2xl
+                    opacity-70
+                    hover:opacity-100
+                  "
+                >
+                  <ul class="flex mt-6 text-white mb-2">
+                    <li class="text-sm mr-12 flex">
+                      <i class="ri-white ri-xl ri-government-fill"></i>
+                      <p class="-mt-1 ml-2">Build With Angga</p>
+                    </li>
+                    <li class="text-sm flex">
+                      <i class="ri-white ri-xl ri-calendar-fill"></i>
+                      <p class="-mt-1 ml-2">March 2021</p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h4 class="text-white font-bold my-4">Full Stack Website Developer</h4>
+                  <p class="font-light text-gray-50 text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
+                    commodi quaerat eaque culpa facilis voluptatem!
+                  </p>
+                  <a
+                    href="images/pdf/full-stack-web-developer-fandi-bayu-anggoro-sakti.pdf"
+                    target="_blank"
+                    class="float-right mt-6 text-yellow-400 hover:underline"
+                    >View Sertificat</a
+                  >
+                </div>
+                <!-- sertifikat 5 -->
+                <div
+                  class="
+                    bg-gradient-to-br
+                    from-gray-900
+                    p-8
+                    transform
+                    hover:-translate-y-7
+                    duration-700
+                    shadow-2xl
+                    opacity-70
+                    hover:opacity-100
+                  "
+                >
+                  <ul class="flex mt-6 text-white mb-2">
+                    <li class="text-sm mr-12 flex">
+                      <i class="ri-white ri-xl ri-government-fill"></i>
+                      <p class="-mt-1 ml-2">Build With Angga</p>
+                    </li>
+                    <li class="text-sm flex">
+                      <i class="ri-white ri-xl ri-calendar-fill"></i>
+                      <p class="-mt-1 ml-2">June 2021</p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h4 class="text-white font-bold my-4">Full-Stack Website Designer</h4>
+                  <p class="font-light text-gray-50 text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
+                    commodi quaerat eaque culpa facilis voluptatem!
+                  </p>
+                  <a
+                    href="images/pdf/full-stack-web-designer-handoff-dan-front-end-fandi-bayu-as.pdf"
+                    target="_blank"
+                    class="float-right mt-6 text-yellow-400 hover:underline"
+                    >View Sertificat</a
+                  >
+                </div>
+                <!-- sertifikat 6 -->
+                <div
+                  class="
+                    bg-gradient-to-br
+                    from-gray-900
+                    p-8
+                    transform
+                    hover:-translate-y-7
+                    duration-700
+                    shadow-2xl
+                    opacity-70
+                    hover:opacity-100
+                  "
+                >
+                  <ul class="flex mt-6 text-white mb-2">
+                    <li class="text-sm mr-4 flex">
+                      <i class="ri-white ri-xl ri-government-fill"></i>
+                      <p class="-mt-1 ml-2">Direktorat Jenderal Pajak</p>
+                    </li>
+                    <li class="text-sm flex">
+                      <i class="ri-white ri-xl ri-calendar-fill"></i>
+                      <p class="-mt-1 ml-2">July 2021</p>
+                    </li>
+                  </ul>
+                  <hr />
+                  <h4 class="text-white font-bold my-4">Lomba Cipta Game Edukasi Perpajakan</h4>
+                  <p class="font-light text-gray-50 text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
+                    commodi quaerat eaque culpa facilis voluptatem!
+                  </p>
+                  <a
+                    href="images/pdf/sertifikat game djp.pdf"
+                    target="_blank"
+                    class="float-right mt-6 text-yellow-400 hover:underline"
+                    >View Sertificat</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- end sertificat -->
+        <!-- contact -->
+        <section id="contact">
+          <div class="mx-auto">
+            <div class="text-center">
+              <h1 class="font-bold text-3xl text-white my-6 animate-bounce">Get in Touch</h1>
+              <h4 class="text-light text-sm text-gray-800 px-6 lg:px-0">
+                For any bussiness inquiries, questions or if you wanna just say hi, <br class="lg:block hidden" />
+                you can leave me an email, I'll try my best to get back to you!
+              </h4>
+              <!-- button -->
+              <div class="my-10">
                 <a
                   href="#"
                   class="
-                    border-yellow-400 border-2
-                    hover:bg-yellow-400 hover:text-white
-                    px-9
-                    py-2
-                    text-gray-300
+                    px-12
                     rounded-xl
+                    py-2
+                    border-2 border-yellow-400
+                    text-gray-800
+                    hover:text-white hover:bg-yellow-500
                     duration-500
-                    mb-4
                   "
-                  >Get in touch</a
+                  >Say Hi</a
                 >
-                <div class="z-10">
-                  <ul class="flex mt-8">
-                    <li>
-                      <a href="#" class="pr-3">
-                        <i class="ri-red ri-xl ri-github-fill transform hover:scale-110" width="36px"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="pr-3">
-                        <i class="ri-red ri-xl ri-dribbble-line transform motion-safe:hover:scale-110" width="36px"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="pr-3">
-                        <i class="ri-red ri-xl ri-instagram-line" width="36px"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="pr-3">
-                        <i
-                          class="ri-red ri-xl ri-linkedin-box-fill transform motion-safe:hover:scale-110"
-                          width="36px"
-                        ></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="">
-                        <i
-                          class="ri-red ri-xl ri-facebook-circle-fill transform motion-safe:hover:scale-110"
-                          width="36px"
-                        ></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               </div>
-            </div>
-            <div class="w-1/2">
-              <img
-                src="images/undraw_designer_re_5v95.svg"
-                class="
-                  h-full
-                  lg:pl-24
-                  rounded-xl
-                  -mt-12
-                  lg:block
-                  hidden
-                  z-10
-                  animate__animated animate__slideInRight animate__delay-0.5s
-                "
-                style="height: 100%"
-                width="100%"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end hero -->
-    </header>
-    <main class="">
-      <!-- about me -->
-      <section>
-        <div class="mx-auto lg:my-48 container lg:mt-12 mt-56">
-          <div class="lg:flex">
-            <div class="lg:w-1/2 w-full animate__animated animate__slideInLeft animate__delay-0.5s">
-              <img
-                src="images/dummy-profile.png"
-                width="80%"
-                class="
-                  rounded-xl
-                  shadow-2xl
-                  transform
-                  hover:translate-x-4 hover:translate-y-4
-                  transition
-                  duration-700
-                  mx-auto
-                "
-                alt=""
-              />
-            </div>
-            <div
-              class="
-                lg:w-1/2 lg:pl-12 lg:mt-14
-                w-full
-                p-4
-                text-left
-                mt-12
-                animate__animated animate__slideInRight animate__delay-0.5s
-              "
-            >
-              <h1 class="font-bold text-white text-3xl">About <span class="text-yellow-400">Me</span></h1>
-              <p class="mt-8 leading-6 text-white text-justify">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat corrupti voluptatum nulla distinctio
-                aspernatur quo, quod nesciunt libero beatae officiis debitis. Neque error repellendus quisquam aliquam
-                nesciunt <b>expedita recusandae voluptatem facilis,</b> illo labore sapiente ipsum delectus alias, optio
-                esse itaque eum vitae voluptas doloremque sint dolorem voluptates corporis distinctio! Temporibus.
-                <br />
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, corrupti :
-              </p>
-              <ul class="flex mt-8 justify-center lg:justify-start text-gray-800">
-                <li class="pr-4"><i class="ri-2x ri-html5-fill"></i></li>
-                <li class="pr-4"><i class="ri-2x ri-css3-fill"></i></li>
-                <li class="pr-4"><i class="ri-2x ri-unsplash-fill"></i></li>
-                <li class="pr-4"><i class="ri-2x ri-terminal-box-fill"></i></li>
-                <li><i class="ri-2x ri-code-line"></i></li>
+              <div class="mb-4">
+                <h5 class="font-bold text-lg text-white">
+                  Find me on <span class="text-yellow-400">social media</span>
+                </h5>
+              </div>
+              <ul class="flex justify-center">
+                <li>
+                  <a href="https://github.com/Fanddibay" target="_blank" class="pr-3">
+                    <i class="ri-red ri-xl ri-github-fill transform hover:scale-110" width="36px"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://dribbble.com/fanbayy" target="_blank" class="pr-3">
+                    <i class="ri-red ri-xl ri-dribbble-line transform motion-safe:hover:scale-110" width="36px"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/fanddibay/" target="_blank" class="pr-3">
+                    <i class="ri-red ri-xl ri-instagram-line" width="36px"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/fanddi-bayu-776b211b3/" target="_blank" class="pr-3">
+                    <i class="ri-red ri-xl ri-linkedin-box-fill transform motion-safe:hover:scale-110" width="36px"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/fanbay.fanbay.1" target="_blank" class="">
+                    <i
+                      class="ri-red ri-xl ri-facebook-circle-fill transform motion-safe:hover:scale-110"
+                      width="36px"
+                    ></i>
+                  </a>
+                </li>
+                <li></li>
               </ul>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- end about me -->
-      <!-- project page -->
-      <section>
-        <div class="mx-auto my-48">
-          <div class="container mx-auto">
-            <h1 class="text-center text-yellow-400 text-3xl font-bold">
-              Some <span class="text-gray-400 underline">Projects</span> I've built
-            </h1>
-            <div class="carousel relative shadow-2xl mt-14 transform hover:-translate-y-8 duration-700">
-              <div class="carousel-inner relative overflow-hidden lg:w-full shadow-2xl container rounded-xl">
-                <!--Slide 1-->
-                <input
-                  class="carousel-open"
-                  type="radio"
-                  id="carousel-1"
-                  name="carousel"
-                  aria-hidden="true"
-                  hidden=""
-                  checked="checked"
-                />
-                <div class="carousel-item absolute opacity-0 lg:h-3/6 h-screen p-4 lg:p-0">
-                  <div
-                    class="
-                      block
-                      lg:flex lg:h-full
-                      h-screen
-                      bg-gradient-to-l
-                      from-gray-700
-                      text-white text-center
-                      px-8
-                      lg:px-0
-                      pt-36
-                      lg:pt-0
-                    "
-                  >
-                    <div class="lg:w-1/2 w-full lg:h-full pt-8">
-                      <img src="images/web-1.png" class="w-full h-full lg:w-full" alt="" />
-                    </div>
-                    <div class="lg:w-1/2 w-full pt-8 pl-6 text-left">
-                      <h3 class="font-bold text-xl leading-10">Productly Company Website</h3>
-                      <h5>Role: Frontend Developer</h5>
-                      <p class="mt-8 pr-4">
-                        Productly Company Website is a website comapny that i built with bootstrap 5, and jquery
-                        <br />
-                        <br />
-                        <span class="text-yellow-400">Bootstrap, Jquery, HTML</span>
-                      </p>
-                      <ul class="flex align-middle mt-4">
-                        <li class="mt-2">
-                          <a href="#">
-                            <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
-                          ></a>
-                        </li>
-                        <li class="text-2xl">|</li>
-                        <li class="mt-2">
-                          <a href="#">
-                            <i
-                              class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
-                              width="36px"
-                            ></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <label
-                  for="carousel-4"
-                  class="
-                    prev
-                    control-1
-                    w-10
-                    h-10
-                    ml-2
-                    lg:ml-10
-                    absolute
-                    cursor-pointer
-                    hidden
-                    text-3xl
-                    font-bold
-                    text-black
-                    hover:text-white
-                    rounded-full
-                    bg-white
-                    hover:bg-blue-700
-                    leading-tight
-                    text-center
-                    z-10
-                    inset-y-0
-                    left-0
-                    my-auto
-                  "
-                  >‹</label
-                >
-                <label
-                  for="carousel-2"
-                  class="
-                    next
-                    control-1
-                    w-10
-                    h-10
-                    mr-2
-                    lg:mr-10
-                    absolute
-                    cursor-pointer
-                    hidden
-                    text-3xl
-                    font-bold
-                    text-black
-                    hover:text-white
-                    rounded-full
-                    bg-white
-                    hover:bg-blue-700
-                    leading-tight
-                    text-center
-                    z-10
-                    inset-y-0
-                    right-0
-                    my-auto
-                  "
-                  >›</label
-                >
-
-                <!--Slide 2-->
-                <input
-                  class="carousel-open"
-                  type="radio"
-                  id="carousel-2"
-                  name="carousel"
-                  aria-hidden="true"
-                  hidden=""
-                />
-                <div class="carousel-item absolute opacity-0 lg:h-3/6 h-screen p-4 lg:p-0">
-                  <div
-                    class="
-                      block
-                      lg:flex lg:h-full
-                      h-screen
-                      bg-gradient-to-l
-                      from-gray-700
-                      text-white text-center
-                      px-8
-                      lg:px-0
-                      pt-36
-                      lg:pt-0
-                    "
-                  >
-                    <div class="w-1/2 w-full lg:h-full pt-8">
-                      <img src="images/web-7.png" class="w-full h-full lg:w-11/12" alt="" />
-                    </div>
-                    <div class="lg:w-1/2 w-full pt-8 text-left z-50">
-                      <h3 class="font-bold text-xl leading-10">FanTravel</h3>
-                      <h5>Role: Frontend Developer</h5>
-                      <p class="mt-8 pr-4">
-                        FanTravel is a Travel Statis Website, and and i have completed to the backend developer stage
-                        with php and laravel framework 6, for more info u can
-                        <a href="#" class="underline hover:text-yellow-400">email me</a>
-                        <br />
-                        <br />
-                        <span class="text-yellow-400">Bootstrap, Jquery, HTML</span>
-                      </p>
-                      <ul class="flex align-middle mt-4 z-50">
-                        <li class="mt-2">
-                          <a href="#">
-                            <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
-                          ></a>
-                        </li>
-                        <li class="text-2xl">|</li>
-                        <li class="mt-2">
-                          <a href="#">
-                            <i
-                              class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
-                              width="36px"
-                            ></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <label
-                  for="carousel-1"
-                  class="
-                    prev
-                    control-2
-                    w-10
-                    h-10
-                    ml-2
-                    lg:ml-10
-                    absolute
-                    cursor-pointer
-                    hidden
-                    text-3xl
-                    font-bold
-                    text-black
-                    hover:text-white
-                    rounded-full
-                    bg-white
-                    hover:bg-blue-700
-                    leading-tight
-                    text-center
-                    z-10
-                    inset-y-0
-                    left-0
-                    my-auto
-                  "
-                  >‹</label
-                >
-                <label
-                  for="carousel-3"
-                  class="
-                    next
-                    control-2
-                    w-10
-                    h-10
-                    mr-2
-                    lg:mr-10
-                    absolute
-                    cursor-pointer
-                    hidden
-                    text-3xl
-                    font-bold
-                    text-black
-                    hover:text-white
-                    rounded-full
-                    bg-white
-                    hover:bg-blue-700
-                    leading-tight
-                    text-center
-                    z-50
-                    inset-y-0
-                    right-0
-                    my-auto
-                  "
-                  >›</label
-                >
-
-                <!--Slide 3-->
-                <input
-                  class="carousel-open"
-                  type="radio"
-                  id="carousel-3"
-                  name="carousel"
-                  aria-hidden="true"
-                  hidden=""
-                />
-                <div class="carousel-item absolute opacity-0 lg:h-3/6 h-screen p-4 lg:p-0">
-                  <div
-                    class="
-                      block
-                      lg:flex lg:h-full
-                      h-screen
-                      bg-gradient-to-l
-                      from-gray-700
-                      text-white text-center
-                      px-8
-                      lg:px-0
-                      pt-36
-                      lg:pt-0
-                    "
-                  >
-                    <div class="w-1/2 w-full lg:h-full pt-8">
-                      <img src="images/web-6.png" class="w-full h-full lg:w-11/12" " alt="" />
-                    </div>
-                    <div class="lg:w-1/2 w-full pt-8 text-left z-50">
-                      <h3 class="font-bold text-xl leading-10">Luxspace</h3>
-                      <h5>Role: Frontend Developer</h5>
-                      <p class="mt-8 pr-4">
-                        Luxspace is a website online shop funiture that i built with tailwind css, jquery, dan webpack
-                        <br />
-                        <br />
-                        <span class="text-yellow-400">Tailwindcss, Jquery, HTML,Webpack</span>
-                      </p>
-                      <ul class="flex align-middle mt-4">
-                        <li class="mt-2">
-                          <a href="#">
-                            <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
-                          ></a>
-                        </li>
-                        <li class="text-2xl">|</li>
-                        <li class="mt-2">
-                          <a href="#">
-                            <i
-                              class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
-                              width="36px"
-                            ></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <label
-                  for="carousel-2"
-                  class="
-                    prev
-                    control-3
-                    w-10
-                    h-10
-                    ml-2
-                    lg:ml-10
-                    absolute
-                    cursor-pointer
-                    hidden
-                    text-3xl
-                    font-bold
-                    text-black
-                    hover:text-white
-                    rounded-full
-                    bg-white
-                    hover:bg-blue-700
-                    leading-tight
-                    text-center
-                    z-10
-                    inset-y-0
-                    left-0
-                    my-auto
-                  "
-                  >‹</label
-                >
-                <label
-                  for="carousel-4"
-                  class="
-                    next
-                    control-3
-                    w-10
-                    h-10
-                    mr-2
-                    lg:mr-10
-                    absolute
-                    cursor-pointer
-                    hidden
-                    text-3xl
-                    font-bold
-                    text-black
-                    hover:text-white
-                    rounded-full
-                    bg-white
-                    hover:bg-blue-700
-                    leading-tight
-                    text-center
-                    z-50
-                    inset-y-0
-                    right-0
-                    my-auto
-                  "
-                  >›</label
-                >
-                <!-- slide 4 -->
-                <input
-                  class="carousel-open"
-                  type="radio"
-                  id="carousel-4"
-                  name="carousel"
-                  aria-hidden="true"
-                  hidden=""
-                />
-                <div class="carousel-item absolute opacity-0 lg:h-3/6 h-screen p-4 lg:p-0">
-                  <div
-                    class="
-                      block
-                      lg:flex lg:h-full
-                      h-screen
-                      bg-gradient-to-l
-                      from-gray-700
-                      text-white text-center
-                      px-8
-                      lg:px-0
-                      pt-36
-                      lg:pt-0
-                    "
-                  >
-                    <div class="w-1/2 w-full lg:h-full pt-8">
-                      <img src="images/web-5.png" class="w-full h-full lg:w-11/12" alt="" />
-                    </div>
-                    <div class="lg:w-1/2 w-full pt-8 text-left z-50">
-                      <h3 class="font-bold text-xl leading-10">Tax-Qu</h3>
-                      <h5>Role: Frontend Developer</h5>
-                      <p class="mt-8 pr-4">
-                        Tax-Qu is a Game Question for a tax education that i built with Vanilla Css 80%, bootstrap,
-                        Vanilla Js, jquery, and webpack
-                        <br />
-                        <br />
-                        <span class="text-yellow-400">Vanilla Css, Jquery, HTML,JavaScript, Webpack</span>
-                      </p>
-                      <ul class="flex align-middle mt-4">
-                        <li class="mt-2">
-                          <a href="#">
-                            <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
-                          ></a>
-                        </li>
-                        <li class="text-2xl">|</li>
-                        <li class="mt-2">
-                          <a href="#">
-                            <i
-                              class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
-                              width="36px"
-                            ></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <label
-                  for="carousel-3"
-                  class="
-                    prev
-                    control-4
-                    w-10
-                    h-10
-                    ml-2
-                    lg:ml-10
-                    absolute
-                    cursor-pointer
-                    hidden
-                    text-3xl
-                    font-bold
-                    text-black
-                    hover:text-white
-                    rounded-full
-                    bg-white
-                    hover:bg-blue-700
-                    leading-tight
-                    text-center
-                    z-10
-                    inset-y-0
-                    left-0
-                    my-auto
-                  "
-                  >‹</label
-                >
-                <label
-                  for="carousel-1"
-                  class="
-                    next
-                    control-4
-                    w-10
-                    h-10
-                    mr-2
-                    lg:mr-10
-                    absolute
-                    cursor-pointer
-                    hidden
-                    text-3xl
-                    font-bold
-                    text-black
-                    hover:text-white
-                    rounded-full
-                    bg-white
-                    hover:bg-blue-700
-                    leading-tight
-                    text-center
-                    z-50
-                    inset-y-0
-                    right-0
-                    my-auto
-                  "
-                  >›</label
-                >
-
-                <!-- Add additional indicators for each slide-->
-                <ol class="carousel-indicators">
-                  <li class="inline-block mr-3">
-                    <label
-                      for="carousel-1"
-                      class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-yellow-400"
-                      >•</label
-                    >
-                  </li>
-                  <li class="inline-block mr-3">
-                    <label
-                      for="carousel-2"
-                      class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-yellow-400"
-                      >•</label
-                    >
-                  </li>
-                  <li class="inline-block mr-3">
-                    <label
-                      for="carousel-3"
-                      class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-yellow-400"
-                      >•</label
-                    >
-                  </li>
-                  <li class="inline-block mr-3">
-                    <label
-                      for="carousel-4"
-                      class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-yellow-400"
-                      >•</label
-                    >
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <!-- some project -->
-            <div class="mt-44">
-              <h1 class="text-center text-gray-400 text-3xl font-bold lg:mt-24 mt-40 mb-12 lg:px-0 px-4">
-                Another Project <span class="text-yellow-400 underline">Redesign</span> I've Built
-              </h1>
-              <!-- mobile mode -->
-              <div class="block lg:hidden">
-                <div class="grid grid-cols-1 gap-4 px-5 mt-14">
-                  <div
-                    class="
-                      mt-2
-                      row-span-4
-                      bg-gradient-to-br
-                      from-gray-700
-                      bg-gray-700
-                      rounded-b-xl
-                      transform
-                      duration-700
-                      hover:-translate-y-4 hover:shadow-2xl
-                    "
-                  >
-                    <div class="">
-                      <img
-                        src="images/web-2.png"
-                        class="opacity-50 hover:opacity-100 duration-700 delay-300"
-                        style="width: 100%"
-                        alt=""
-                      />
-                    </div>
-                    <div class="mt-4 p-5">
-                      <h2 class="text-white font-bold leading-10">Redesign Website Russ Rufino</h2>
-                      <p class="mt-6 text-light text-white text-sm">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eius perferendis
-                        asperiores temporibus dolorum culpa reprehenderit maxime incidunt sunt libero!
-                      </p>
-                      <ul class="flex float-right mt-12 mb-4">
-                        <li class="mt-2">
-                          <a href="#">
-                            <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
-                          ></a>
-                        </li>
-                        <li class="text-2xl">|</li>
-                        <li class="mt-2">
-                          <a href="#">
-                            <i
-                              class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
-                              width="36px"
-                            ></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div
-                    class="
-                      mt-2
-                      row-span-4
-                      bg-gradient-to-br
-                      from-gray-700
-                      bg-gray-700
-                      rounded-b-xl
-                      transform
-                      duration-700
-                      hover:-translate-y-4 hover:shadow-2xl
-                    "
-                  >
-                    <div class="">
-                      <img
-                        src="images/web-3.png"
-                        class="opacity-50 hover:opacity-100 duration-700 delay-300"
-                        style="width: 100%"
-                        alt=""
-                      />
-                    </div>
-                    <div class="mt-4 p-5">
-                      <h2 class="text-white font-bold leading-10">Redesign Website Taki Moore</h2>
-                      <p class="mt-6 text-light text-white text-sm">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eius perferendis
-                        asperiores temporibus dolorum culpa reprehenderit maxime incidunt sunt libero!
-                      </p>
-                      <ul class="flex float-right mt-12 mb-4">
-                        <li class="mt-2">
-                          <a href="#">
-                            <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
-                          ></a>
-                        </li>
-                        <li class="text-2xl">|</li>
-                        <li class="mt-2">
-                          <a href="#">
-                            <i
-                              class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
-                              width="36px"
-                            ></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div
-                    class="
-                      mt-2
-                      row-span-4
-                      bg-gradient-to-br
-                      from-gray-700
-                      bg-gray-700
-                      rounded-b-xl
-                      transform
-                      duration-700
-                      hover:-translate-y-4 hover:shadow-2xl
-                    "
-                  >
-                    <div class="">
-                      <img
-                        src="images/web-4.png"
-                        class="opacity-50 hover:opacity-100 duration-700 delay-300"
-                        style="width: 100%"
-                        alt=""
-                      />
-                    </div>
-                    <div class="mt-4 p-5">
-                      <h2 class="text-white font-bold leading-10">Redesign Website Crush With Chalangge</h2>
-                      <p class="mt-6 text-light text-white text-sm">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eius perferendis
-                        asperiores temporibus dolorum culpa reprehenderit maxime incidunt sunt libero!
-                      </p>
-                      <ul class="flex float-right mt-12 mb-4">
-                        <li class="mt-2">
-                          <a href="#">
-                            <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
-                          ></a>
-                        </li>
-                        <li class="text-2xl">|</li>
-                        <li class="mt-2">
-                          <a href="#">
-                            <i
-                              class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
-                              width="36px"
-                            ></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end mobile mode -->
-              <!-- dekstop mode -->
-              <div class="hidden lg:block">
-                <div class="grid grid-rows-4 grid-flow-col gap-4">
-                  <div
-                    class="
-                      row-span-4
-                      bg-gradient-to-br
-                      from-gray-700
-                      rounded-b-xl
-                      transform
-                      duration-700
-                      hover:-translate-y-4 hover:shadow-2xl
-                    "
-                  >
-                    <div class="">
-                      <img
-                        src="images/web-2.png"
-                        class="opacity-50 hover:opacity-100 duration-700 delay-300"
-                        style="width: 100%"
-                        alt=""
-                      />
-                    </div>
-                    <div class="mt-4 p-5">
-                      <h2 class="text-white font-bold leading-10">Redesign Website Russ Rufino</h2>
-                      <p class="mt-6 text-light text-white text-sm">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis eius perferendis
-                        asperiores temporibus dolorum culpa reprehenderit maxime incidunt sunt libero!
-                      </p>
-                      <ul class="flex float-right mt-12 mb-4">
-                        <li class="mt-2">
-                          <a href="#">
-                            <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
-                          ></a>
-                        </li>
-                        <li class="text-2xl">|</li>
-                        <li class="mt-2">
-                          <a href="#">
-                            <i
-                              class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
-                              width="36px"
-                            ></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div
-                    class="
-                      col-span-2
-                      row-span-2
-                      bg-gradient-to-tl
-                      from-gray-700
-                      flex
-                      rounded-b-xl
-                      transform
-                      duration-700
-                      hover:translate-x-4 hover:shadow-2xl
-                    "
-                  >
-                    <div class="w-1/2">
-                      <img
-                        src="images/web-3.png"
-                        class="h-full opacity-50 hover:opacity-100 duration-700 delay-300"
-                        style="width: 100%"
-                        alt=""
-                      />
-                    </div>
-                    <div class="mt-4 pl-5">
-                      <h2 class="text-white font-bold leading-10">Redesign Website Pedro Adao</h2>
-                      <p class="text-sm text-gray-800">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-                      </p>
-                      <ul class="flex mt-12 mb-4">
-                        <li class="mt-2">
-                          <a href="#">
-                            <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
-                          ></a>
-                        </li>
-                        <li class="text-2xl">|</li>
-                        <li class="mt-2">
-                          <a href="#">
-                            <i
-                              class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
-                              width="36px"
-                            ></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div
-                    class="
-                      col-span-2
-                      row-span-2
-                      bg-gradient-to-tl
-                      from-gray-700
-                      flex
-                      rounded-b-xl
-                      transform
-                      duration-700
-                      hover:translate-x-4 hover:shadow-2xl
-                    "
-                  >
-                    <div class="w-1/2">
-                      <img
-                        src="images/web-4.png"
-                        class="h-full opacity-50 hover:opacity-100 duration-700 delay-300"
-                        style="width: 100%"
-                        alt=""
-                      />
-                    </div>
-                    <div class="mt-4 pl-5">
-                      <h2 class="text-white font-bold leading-10">Redesign Website Taki Moore</h2>
-                      <p class="text-sm text-gray-800">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-                      </p>
-                      <ul class="flex mt-12 mb-4">
-                        <li class="mt-2">
-                          <a href="#">
-                            <i class="ri-red ri-xl pr-4 ri-github-fill transform hover:scale-110" width="36px"></i
-                          ></a>
-                        </li>
-                        <li class="text-2xl">|</li>
-                        <li class="mt-2">
-                          <a href="#">
-                            <i
-                              class="ri-red ri-xl pl-4 ri-external-link-line transform hover:scale-110"
-                              width="36px"
-                            ></i
-                          ></a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- end dekstop mode -->
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end project page -->
-      <!-- sertificat -->
-      <section>
-        <div class="-mt-4 mx-auto mb-24">
-          <div class="container lg:pl-14 pl-0">
-            <h1 class="font-bold text-4xl text-center text-white mb-14">Sertificat</h1>
-            <div class="grid grid-cols-1 lg:grid-cols-3 px-4 lg:px-0 gap-6">
-              <!-- sertifikat 1 -->
-              <div
-                class="
-                  bg-gradient-to-br
-                  from-gray-900
-                  p-8
-                  shadow-2xl
-                  opacity-70
-                  hover:opacity-100
-                  transform
-                  hover:-translate-y-7
-                  duration-700
-                "
-              >
-                <ul class="flex mt-6 text-white mb-2">
-                  <li class="text-sm mr-12 flex">
-                    <i class="ri-white ri-xl ri-government-fill"></i>
-                    <p class="-mt-1 ml-2">Dicoding Academy</p>
-                  </li>
-                  <li class="text-sm flex">
-                    <i class="ri-white ri-xl ri-calendar-fill"></i>
-                    <p class="-mt-1 ml-2">Juli 2020</p>
-                  </li>
-                </ul>
-                <hr />
-                <h4 class="text-white font-bold my-4">Belajar Dasar Pemograman Web</h4>
-                <p class="font-light text-gray-50 text-justify">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
-                  commodi quaerat eaque culpa facilis voluptatem!
-                </p>
-                <a
-                  target="_blank"
-                  href="https://www.dicoding.com/certificates/W0LZ0WK13Z65"
-                  class="float-right mt-6 text-yellow-400 hover:underline"
-                  >View Sertificat</a
-                >
-              </div>
-              <!-- sertifikat 2 -->
-              <div
-                class="
-                  bg-gradient-to-br
-                  from-gray-900
-                  p-8
-                  transform
-                  hover:-translate-y-7
-                  duration-700
-                  shadow-2xl
-                  opacity-70
-                  hover:opacity-100
-                "
-              >
-                <ul class="flex mt-6 text-white mb-2">
-                  <li class="text-sm mr-4 flex">
-                    <i class="ri-white ri-xl ri-government-fill"></i>
-                    <p class="-mt-1 ml-2">Dicoding Academy</p>
-                  </li>
-                  <li class="text-sm flex">
-                    <i class="ri-white ri-xl ri-calendar-fill"></i>
-                    <p class="-mt-1 ml-2">September 2020</p>
-                  </li>
-                </ul>
-                <hr />
-                <h4 class="text-white font-bold my-4">Belajar Fundamental Front-End Web</h4>
-                <p class="font-light text-gray-50 text-justify">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
-                  commodi quaerat eaque culpa facilis voluptatem!
-                </p>
-                <a
-                  href="https://www.dicoding.com/certificates/KERZRQR4WXYV"
-                  target="_blank"
-                  class="float-right mt-6 text-yellow-400 hover:underline"
-                  >View Sertificat</a
-                >
-              </div>
-              <!-- sertifikat 3 -->
-              <div
-                class="
-                  bg-gradient-to-br
-                  from-gray-900
-                  p-8
-                  transform
-                  hover:-translate-y-7
-                  duration-700
-                  shadow-2xl
-                  opacity-70
-                  hover:opacity-100
-                "
-              >
-                <ul class="flex mt-6 text-white mb-2">
-                  <li class="text-sm mr-8 flex">
-                    <i class="ri-white ri-xl ri-government-fill"></i>
-                    <p class="-mt-1 ml-2">Dicoding Academy</p>
-                  </li>
-                  <li class="text-sm flex">
-                    <i class="ri-white ri-xl ri-calendar-fill"></i>
-                    <p class="-mt-1 ml-2">October 2021</p>
-                  </li>
-                </ul>
-                <hr />
-                <h4 class="text-white font-bold my-4">Membuat Produk Digital Terbaik ala Startup Unicorn</h4>
-                <p class="font-light text-gray-50 text-justify">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
-                  commodi quaerat eaque culpa facilis voluptatem!
-                </p>
-                <a
-                  href="images/pdf/Membuat Produk Digital Terbaik ala Startup Unicorn Certificate.pdf"
-                  target="_blank"
-                  class="float-right mt-6 text-yellow-400 hover:underline"
-                  >View Sertificat</a
-                >
-              </div>
-              <!-- sertifikat 4 -->
-              <div
-                class="
-                  bg-gradient-to-br
-                  from-gray-900
-                  p-8
-                  transform
-                  hover:-translate-y-7
-                  duration-700
-                  shadow-2xl
-                  opacity-70
-                  hover:opacity-100
-                "
-              >
-                <ul class="flex mt-6 text-white mb-2">
-                  <li class="text-sm mr-12 flex">
-                    <i class="ri-white ri-xl ri-government-fill"></i>
-                    <p class="-mt-1 ml-2">Build With Angga</p>
-                  </li>
-                  <li class="text-sm flex">
-                    <i class="ri-white ri-xl ri-calendar-fill"></i>
-                    <p class="-mt-1 ml-2">March 2021</p>
-                  </li>
-                </ul>
-                <hr />
-                <h4 class="text-white font-bold my-4">Full Stack Website Developer</h4>
-                <p class="font-light text-gray-50 text-justify">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
-                  commodi quaerat eaque culpa facilis voluptatem!
-                </p>
-                <a
-                  href="images/pdf/full-stack-web-developer-fandi-bayu-anggoro-sakti.pdf"
-                  target="_blank"
-                  class="float-right mt-6 text-yellow-400 hover:underline"
-                  >View Sertificat</a
-                >
-              </div>
-              <!-- sertifikat 5 -->
-              <div
-                class="
-                  bg-gradient-to-br
-                  from-gray-900
-                  p-8
-                  transform
-                  hover:-translate-y-7
-                  duration-700
-                  shadow-2xl
-                  opacity-70
-                  hover:opacity-100
-                "
-              >
-                <ul class="flex mt-6 text-white mb-2">
-                  <li class="text-sm mr-12 flex">
-                    <i class="ri-white ri-xl ri-government-fill"></i>
-                    <p class="-mt-1 ml-2">Build With Angga</p>
-                  </li>
-                  <li class="text-sm flex">
-                    <i class="ri-white ri-xl ri-calendar-fill"></i>
-                    <p class="-mt-1 ml-2">June 2021</p>
-                  </li>
-                </ul>
-                <hr />
-                <h4 class="text-white font-bold my-4">Full-Stack Website Designer</h4>
-                <p class="font-light text-gray-50 text-justify">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
-                  commodi quaerat eaque culpa facilis voluptatem!
-                </p>
-                <a
-                  href="images/pdf/full-stack-web-designer-handoff-dan-front-end-fandi-bayu-as.pdf"
-                  target="_blank"
-                  class="float-right mt-6 text-yellow-400 hover:underline"
-                  >View Sertificat</a
-                >
-              </div>
-              <!-- sertifikat 6 -->
-              <div
-                class="
-                  bg-gradient-to-br
-                  from-gray-900
-                  p-8
-                  transform
-                  hover:-translate-y-7
-                  duration-700
-                  shadow-2xl
-                  opacity-70
-                  hover:opacity-100
-                "
-              >
-                <ul class="flex mt-6 text-white mb-2">
-                  <li class="text-sm mr-4 flex">
-                    <i class="ri-white ri-xl ri-government-fill"></i>
-                    <p class="-mt-1 ml-2">Direktorat Jenderal Pajak</p>
-                  </li>
-                  <li class="text-sm flex">
-                    <i class="ri-white ri-xl ri-calendar-fill"></i>
-                    <p class="-mt-1 ml-2">July 2021</p>
-                  </li>
-                </ul>
-                <hr />
-                <h4 class="text-white font-bold my-4">Lomba Cipta Game Edukasi Perpajakan</h4>
-                <p class="font-light text-gray-50 text-justify">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt rerum autem alias ipsam nemo
-                  commodi quaerat eaque culpa facilis voluptatem!
-                </p>
-                <a
-                  href="images/pdf/sertifikat game djp.pdf"
-                  target="_blank"
-                  class="float-right mt-6 text-yellow-400 hover:underline"
-                  >View Sertificat</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end sertificat -->
-      <!-- contact -->
-      <section>
+        </section>
+        <!-- end contact -->
+      </main>
+      <!-- footer -->
+      <footer>
         <div class="mx-auto">
-          <div class="text-center">
-            <h1 class="font-bold text-3xl text-white my-6">Get in Touch</h1>
-            <h4 class="text-light text-sm text-gray-800 px-6 lg:px-0">
-              For any bussiness inquiries, questions or if you wanna just say hi, <br class="lg:block hidden" />
-              you can leave me an email, I'll try my best to get back to you!
-            </h4>
-            <!-- button -->
-            <div class="my-10">
-              <a
-                href="#"
-                class="
-                  px-12
-                  rounded-xl
-                  py-2
-                  border-2 border-yellow-400
-                  text-gray-800
-                  hover:text-white hover:bg-yellow-500
-                  duration-500
-                "
-                >Say Hi</a
-              >
-            </div>
-            <div class="mb-4">
-              <h5 class="font-bold text-lg text-white">Find me on <span class="text-yellow-400">social media</span></h5>
-            </div>
-            <ul class="flex justify-center">
-              <li>
-                <a href="#" class="pr-3">
-                  <i class="ri-red ri-xl ri-github-fill transform hover:scale-110" width="36px"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="pr-3">
-                  <i class="ri-red ri-xl ri-dribbble-line transform motion-safe:hover:scale-110" width="36px"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="pr-3">
-                  <i class="ri-red ri-xl ri-instagram-line" width="36px"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="pr-3">
-                  <i class="ri-red ri-xl ri-linkedin-box-fill transform motion-safe:hover:scale-110" width="36px"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="">
-                  <i
-                    class="ri-red ri-xl ri-facebook-circle-fill transform motion-safe:hover:scale-110"
-                    width="36px"
-                  ></i>
-                </a>
-              </li>
-              <li></li>
-            </ul>
+          <div class="border-opacity-25 border-t-2 mt-36 border-yellow-400">
+            <h3 class="text-white font-normal text-sm lg:text-lg text-center py-6">
+              © 2021 - Fandi Bayu. All rights reserved.
+            </h3>
           </div>
         </div>
-      </section>
-      <!-- end contact -->
-    </main>
-    <!-- footer -->
-    <footer>
-      <div class="mx-auto">
-        <div class="border-opacity-25 border-t-2 mt-36 border-yellow-400">
-          <h3 class="text-white font-normal text-sm lg:text-lg text-center py-6">
-            © 2021 - Fandi Bayu. All rights reserved.
-          </h3>
-        </div>
-      </div>
-    </footer>
-    <!-- end footer -->
+      </footer>
+      <!-- end footer -->
+    </section>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"

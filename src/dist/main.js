@@ -19,3 +19,19 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
 }
+
+// scroll reveral js
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 1500,
+  delay: 200,
+  reset: true,
+});
+
+sr.reveal(`.anotherProject, #project, #contact, .certificateHeading`);
+sr.reveal(`.certificate1, .certificate2, .certificate3`, { interval: 100 });
+sr.reveal(`.certificate4, .certificate5, .certificate6`, { interval: 150 });
+sr.reveal(`.about-text, .redesign-2`, { origin: `right` });
+sr.reveal(`.about-img, .redesign-1`, { origin: `left` });
+sr.reveal(`.redesign-3`, { origin: `bottom` });

@@ -23,8 +23,8 @@ function showPage() {
 // scroll reveral js
 const sr = ScrollReveal({
   origin: "top",
-  distance: "60px",
   duration: 1500,
+  distance: "20px",
   delay: 200,
   reset: true,
 });

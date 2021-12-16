@@ -7,6 +7,7 @@
     <title>Fanbay-Portfolio</title>
     <meta name="description" content="Portfolio Fandi Bayu" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,121 +26,9 @@
     <meta property="og:image" content="images/dummy-logo.png" />
     <meta name="theme-color" content="#000" />
   </head>
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #352f44;
-    }
 
-    * {
-      scroll-behavior: smooth;
-    }
-
-    .carousel-open:checked + .carousel-item {
-      position: relative;
-      opacity: 100;
-    }
-    .carousel-item {
-      -webkit-transition: opacity 0.6s ease-out;
-      transition: opacity 0.6s ease-out;
-    }
-    #carousel-1:checked ~ .control-1,
-    #carousel-2:checked ~ .control-2,
-    #carousel-3:checked ~ .control-3,
-    #carousel-4:checked ~ .control-4 {
-      display: block;
-    }
-    .carousel-indicators {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      bottom: 2%;
-      left: 0;
-      right: 0;
-      text-align: center;
-      z-index: 10;
-    }
-    #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-    #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-    #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet,
-    #carousel-4:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet {
-      color: rgba(251, 191, 36); /*Set to match the Tailwind colour you want the active one to be */
-    }
-    /* loader */
-    #loader {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      z-index: 1;
-      width: 120px;
-      height: 120px;
-      margin: -76px 0 0 -76px;
-      border-top: 16px solid #342158;
-      border-right: 16px solid #473b66;
-      border-bottom: 16px solid #584096;
-      border-left: 16px solid #572cc4;
-      border-radius: 50%;
-      -webkit-animation: spin 2s linear infinite;
-      animation: spin 2s linear infinite;
-    }
-
-    @-webkit-keyframes spin {
-      0% {
-        -webkit-transform: rotate(0deg);
-      }
-      100% {
-        -webkit-transform: rotate(360deg);
-      }
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .animate-bottom {
-      position: relative;
-      -webkit-animation-name: animatebottom;
-      -webkit-animation-duration: 1s;
-      animation-name: animatebottom;
-      animation-duration: 1s;
-    }
-
-    @-webkit-keyframes animatebottom {
-      from {
-        bottom: -100px;
-        opacity: 0;
-      }
-      to {
-        bottom: 0px;
-        opacity: 1;
-      }
-    }
-
-    @keyframes animatebottom {
-      from {
-        bottom: -100px;
-        opacity: 0;
-      }
-      to {
-        bottom: 0;
-        opacity: 1;
-      }
-    }
-
-    #myDiv {
-      display: none;
-    }
-  </style>
-  <body style="margin: 0" onload="myFunction()">
-    <div id="loader" class="text-center justify-center align-middle self-center"></div>
-
-    <section class="animate-bottom" id="myDiv" style="display: none">
+  <body>
+    <section class="animate-bottom">
       <header class="z-50">
         <!-- navigation -->
         <!-- nav dekstop -->
@@ -1254,7 +1143,6 @@
             </div>
           </div>
         </section>
-        <!-- end project page -->
         <!-- end project page -->
         <!-- Certificate -->
         <section>

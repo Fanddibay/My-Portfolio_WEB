@@ -3,7 +3,7 @@ const sr = ScrollReveal({
   origin: "top",
   duration: 1500,
   distance: "20px",
-  reset: true,
+  reset: false,
 });
 
 sr.reveal(`.anotherProject, #project, #contact, .certificateHeading, #home`);
@@ -24,13 +24,24 @@ $(document).ready(function () {
   });
 });
 
-// // loader
-// var myVar;
-// function myFunction() {
-//   myVar = setTimeout(showPage, 100);
-// }
+// swiper js
+const swiper = new Swiper(".swiper", {
+  direction: "vertical",
+  loop: true,
 
-// function showPage() {
-//   document.getElementById("loader").style.display = "none";
-//   document.getElementById("myDiv").style.display = "block";
-// }
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
